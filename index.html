@@ -6,6 +6,82 @@
     <title>TIC-TAC-TOE GAME</title>
 </head>
 <body>
-    
+    <div class="game-container">
+        <div class="pane-container slim scoreboard-container">
+            <div class="pane-header">
+            
+            </div>
+            <div class="pane scoreboard">
+                <div>
+                    <h2>Scoreboard</h2>
+                    <div id="scoreboard">
+                        <p>Player 1: 0 wins</p>
+                        <p>Player 2: 0 wins</p>
+                        <p>Ties: 0 ties</p>
+                    </div>
+                </div>
+                <button class="button" onclick="ui.toggleScoreBoard()">Close</button>
+            </div>
+        </div>
+
+        <div class="pane-container full">
+            <div class="pane-header">
+                <h1>Tic Tac Toe</h1>
+            </div>
+
+            <div class="pane game">
+                <div class="game-board" id="gameBoard">
+                    <button data-index="0"></button>
+                    <button data-index="1" class="cross"></button>
+                    <button data-index="2" class="circle"></button>
+                    <button data-index="3" class="cross"></button>
+                    <button data-index="4"></button>
+                    <button data-index="5"></button>
+                    <button data-index="6" class="circle"></button>
+                    <button data-index="7"></button>
+                    <button data-index="8" class="cross"></button>
+                </div>
+
+                <form class="hidden">
+                    <div class="form-group">
+                      <label for="player1">Player 1 Name:</label>
+                      <input type="text" id="player1" name="player1" required>
+                    </div>
+                
+                    <div class="form-group">
+                      <label>
+                        <input type="checkbox" id="playAgainstComputer" name="playAgainstComputer">
+                        Play Against Computer
+                      </label>
+                    </div>
+                
+                    <div class="form-group computer-options" id="computerOptions">
+                      <label for="computerDifficulty">Computer Difficulty:</label>
+                      <select id="computerDifficulty" name="computerDifficulty">
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                      </select>
+                    </div>
+                
+                    <div class="form-group" id="player2NameGroup">
+                      <label for="player2">Player 2 Name:</label>
+                      <input type="text" id="player2" name="player2">
+                    </div>
+                
+                    <button type="submit">Start Game</button>
+                </form>
+            </div>
+        </div>
+        <div class="pane-container slim">
+            <div class="pane-header">
+            </div>
+            <div class="pane options">
+                <h2>Options</h2>
+                <button class="button" onclick="ui.toggleScoreBoard()">Scoreboard</button>
+                <button class="button" onclick="newGame()">New Game</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
