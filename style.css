@@ -1,0 +1,147 @@
+*{
+    margin: 2px;
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+:root{
+     font-size: 10px;
+    --pane-header-height: 50px;
+    --background: #333;
+    --pane: #fa9e9e;
+    --h1-title: white;
+    --h2-title: black;
+    --p-text: black;
+    --game-button: #a19f9f;
+    --options-button: #3b3939;
+    --shadow-color: #ccc;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background);
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.game-container{
+    max-height: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    padding: 2%;
+}
+
+h1{
+    color: var(--h1-title);
+    font-size: 25px;
+}
+
+h2{
+    color: var(--h2-title);
+    font-size: 20px;
+}
+
+p{
+    color: var(--p-text);
+    font-size: 1.6rem;
+    margin: 6px 0;
+}
+
+.pane-container{
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+    transition: width 0.8s ease-out;
+}
+
+.pane-container.full .hidden{
+    display: none;
+}
+
+.pane-container.slim{
+    width: 240px;
+    overflow: hidden;
+}
+
+.pane-container.slim.hidden{
+    width: 0;
+}
+
+.pane-header{
+    height: var(--pane-header-height);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pane{
+    background-color: var(--pane);
+    display: flex;
+    padding: 20px;
+    height: calc(100% - var(--pane-header-height));
+    width: 100%;
+    border-radius: 20px;
+}
+
+.pane.scoreboard{
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pane.scoreboard button{
+    display: none;
+}
+
+.pane.game{
+    flex-direction: row;
+    justify-content: center;
+    padding: 50px;
+}
+
+.pane.options{
+    flex-direction: column;
+}
+
+.game-board{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    min-width: 500px;
+    gap: 30px;
+    aspect-ratio: 1/1;
+}
+
+button{
+    border-radius: 4px;
+    box-shadow: 1px 1px 3px 0px var(--shadow-color);
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.game-board button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--game-button);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+}
+
+.button{
+    background-color: var(--options-button);
+    height: 30px;
+    margin: 5px 0;
+}
+
+.cross, .circle{
+    cursor: default;
+}
+
