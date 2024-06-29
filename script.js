@@ -108,16 +108,14 @@ const player = (() => {
         if (playerList.length < 2){
             return console.warn('Player list is empty. Start a game to enter in player.')
         }
-
+        
         const wins1 = playerList[0].wins;
         const wins2 = playerList[1].wins;
         const ties1 = playerList[0].ties;
         const ties2 = playerList[1].ties;
-
         if (ties1 !== ties2){
             return console.error('Player ties are not the same?');
         }
-
         return {
             player1: wins1,
             player2: wins2,
@@ -288,7 +286,6 @@ const game = (() => {
             player.createPlayer(playerName, difficulty);        
         } while (player.getPlayerList().length < 2)
     };
-
     const validateMove = (move) => {
         if (typeof move !== 'number') {
             console.warn('Invalid move, because not number');
@@ -343,7 +340,6 @@ const game = (() => {
             They had ${scores.ties} games that ended in a tie.
         `);
     };
-
     const setMove = index => {
         if (!gameRunning) return console.warn('Game is not running.')
         if (winnerDeclared) return console.warn('Someone already won, start a new game.')
@@ -399,7 +395,6 @@ const ui = (() => {
             });
         });
     }));
-    
     const updateBoard = () => {
         const buttons = document.querySelectorAll('#gameBoard button');
         const gameBoardArr = gameBoard.getBoard().flat();
